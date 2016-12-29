@@ -72,9 +72,6 @@
             // level depth
             this.level = 0;
 
-            // the moving wrapper
-            this.wrapper = document.getElementById('mp-pusher');
-
             // the mp-level elements
             this.levels = [].slice.call(this.el.querySelectorAll('div.mp-level'));
 
@@ -178,7 +175,7 @@
 
         _openMenu : function (subLevel) {
             var levelFactor = (this.level) * this.options.levelSpacing,
-                translateVal = this.el.offsetWidth + levelFactor;
+                translateVal = levelFactor;
 
             this.level += 1;
 
@@ -207,7 +204,6 @@
 
             // add class mp-pushed to main wrapper if opening the first time
             if (this.level === 1) {
-                this.wrapper.classList.add('mp-pushed');
                 this.open = true;
             }
 
@@ -217,12 +213,11 @@
 
         // close the menu
         _resetMenu : function () {
-            this._setTransform('translate3d(0, 0, 0)');
             this.level = 0;
-            // remove class mp-pushed from main wrapper
-            this.wrapper.classList.remove('mp-pushed');
-            this._toggleLevels();
             this.open = false;
+
+            this._setTransform('translate3d(-100%, 0, 0)');
+            this._toggleLevels();
         },
 
         // close sub menus
@@ -235,7 +230,7 @@
 
         // translate the el
         _setTransform : function (val, el) {
-            el = el || this.wrapper;
+            el = el || this.el;
 
             el.style.WebkitTransform = val;
             el.style.MozTransform = val;
