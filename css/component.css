@@ -16,8 +16,7 @@ body,
     overflow-y: scroll;
 }
 
-.scroller,
-.scroller-inner {
+.scroller {
     position: relative;
 }
 
