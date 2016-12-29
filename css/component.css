@@ -6,13 +6,21 @@ body {
 }
 
 .mp-menu {
-    left     : 0;
-    height   : 100%;
-    position : fixed;
-    top      : 0;
-    transform: translate3d(-100%, 0, 0);
-    width    : 300px;
-    z-index  : 1;
+    left      : 0;
+    height    : 100%;
+    position  : fixed;
+    top       : 0;
+    transform : translate3d(-100%, 0, 0);
+    width     : 300px;
+    z-index   : 1;
+}
+
+.mp-level > ul {
+    height: calc(100% - 4rem);
+}
+
+.mp-level-open:not(.mp-level-overlay) > ul {
+    overflow-y: auto;
 }
 
 .mp-level {
@@ -94,8 +102,10 @@ body {
 }
 
 .mp-menu h2 {
-    margin : 0;
-    padding: 1em;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 4rem;
 }
 
 .mp-menu.mp-overlap h2::before {
