@@ -73,7 +73,7 @@
             this.level = 0;
 
             // the mp-level elements
-            this.levels = [].slice.call(this.el.querySelectorAll('div.mp-level'));
+            this.levels = [].slice.call(this.el.querySelectorAll('.mp-level'));
 
             // save the depth of each of these mp-level elements
             this.levels.forEach(function (el, i) {
@@ -166,6 +166,7 @@
 
                     if (self.level <= level) {
                         ev.stopPropagation();
+
                         self.level = closest(el, 'mp-level').getAttribute('data-level') - 1;
                         self.level === 0 ? self._resetMenu() : self._closeMenu();
                     }
@@ -222,7 +223,7 @@
 
         // close sub menus
         _closeMenu : function () {
-            var translateVal = this.el.offsetWidth + (this.level - 1) * this.options.levelSpacing;
+            var translateVal = (this.level - 1) * this.options.levelSpacing;
 
             this._setTransform('translate3d(' + translateVal + 'px, 0, 0)');
             this._toggleLevels();
@@ -232,8 +233,6 @@
         _setTransform : function (val, el) {
             el = el || this.el;
 
-            el.style.WebkitTransform = val;
-            el.style.MozTransform = val;
             el.style.transform = val;
         },
 
@@ -241,8 +240,8 @@
         _toggleLevels : function () {
             var levelEl;
 
-            for (var i = 1, len = this.levels.length; i < len; i += 1) {
-                levelEl = this.levels[i - 1];
+            for (var i = 0, len = this.levels.length; i < len; i += 1) {
+                levelEl = this.levels[i];
 
                 if (levelEl.getAttribute('data-level') >= this.level + 1) {
                     levelEl.classList.remove('mp-level-open');
