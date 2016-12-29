@@ -5,63 +5,59 @@
         <title>Multi-Level Push Menu</title>
 
         <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <script src="js/mlpushmenu.js"></script>
     </head>
 
     <body>
-        <div class="container">
+        <!-- Push Wrapper -->
+        <div class="mp-pusher" id="mp-pusher">
 
-            <!-- Push Wrapper -->
-            <div class="mp-pusher" id="mp-pusher">
+            <!-- mp-menu -->
+            <nav id="mp-menu" class="mp-menu">
+                <div class="mp-level">
+                    <h2>Forlagsvenn</h2>
+                    <ul>
+                        <li><a href="#">New sale</a></li>
 
-                <!-- mp-menu -->
-                <nav id="mp-menu" class="mp-menu">
-                    <div class="mp-level">
-                        <h2>Forlagsvenn</h2>
-                        <ul>
-                            <li><a href="#">New sale</a></li>
+                        <li>
+                            <a href="#">Devices</a>
 
-                            <li>
-                                <a href="#">Devices</a>
+                            <div class="mp-level">
+                                <h2>Devices</h2>
+                                <a class="mp-back" href="#">back</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Mobile Phones</a>
 
-                                <div class="mp-level">
-                                    <h2>Devices</h2>
-                                    <a class="mp-back" href="#">back</a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Mobile Phones</a>
+                                        <div class="mp-level">
+                                            <h2>Mobile Phones</h2>
+                                            <a class="mp-back" href="#">back</a>
+                                            <ul>
+                                                <li><a href="#">Super Smart Phone</a></li>
+                                                <li><a href="#">Thin Magic Mobile</a></li>
+                                                <li><a href="#">Performance Crusher</a></li>
+                                                <li><a href="#">Futuristic Experience</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                            <div class="mp-level">
-                                                <h2>Mobile Phones</h2>
-                                                <a class="mp-back" href="#">back</a>
-                                                <ul>
-                                                    <li><a href="#">Super Smart Phone</a></li>
-                                                    <li><a href="#">Thin Magic Mobile</a></li>
-                                                    <li><a href="#">Performance Crusher</a></li>
-                                                    <li><a href="#">Futuristic Experience</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /mp-menu -->
 
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- /mp-menu -->
-
-                <div class="scroller"><!-- this is for emulating position fixed of the nav -->
-                    <div class="scroller-inner">
-                        <header class="codrops-header">
-                            <h1>Forlags venn</h1>
-                            <p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
-                        </header>
-                    </div><!-- /scroller-inner -->
-                </div><!-- /scroller -->
-
-
+            <div class="scroller"><!-- this is for emulating position fixed of the nav -->
+                <div class="scroller-inner">
+                    <header class="codrops-header">
+                        <h1>Forlags venn</h1>
+                        <p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
+                    </header>
+                </div><!-- /scroller-inner -->
+            </div><!-- /scroller -->
         </div><!-- /container -->
-        <script src="js/mlpushmenu.js"></script>
 
         <script>
             new mlPushMenu(
