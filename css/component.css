@@ -100,14 +100,14 @@ body {
     padding   : 0;
 }
 
-.mp-menu h2 {
+.mp-menu .mp-heading {
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
     height: 4rem;
 }
 
-.mp-menu.mp-overlap h2::before {
+.mp-menu.mp-overlap .mp-heading::before {
     opacity     : 0;
     position    : absolute;
     right       : 0;
@@ -116,7 +116,7 @@ body {
     transition  : opacity .3s, transform .1s .3s;
 }
 
-.mp-overlap .mp-level.mp-level-overlay > h2::before {
+.mp-overlap .mp-level.mp-level-overlay > .mp-heading::before {
     opacity: 1;
     transform: translateX(0);
     transition: transform .3s, opacity .3s;
